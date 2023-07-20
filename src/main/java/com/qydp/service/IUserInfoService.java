@@ -16,6 +16,6 @@ import javax.servlet.http.HttpSession;
  */
 public interface IUserInfoService extends IService<UserInfo> {
 
-    Result sendCode(String phone, HttpSession session);
+
 
 }

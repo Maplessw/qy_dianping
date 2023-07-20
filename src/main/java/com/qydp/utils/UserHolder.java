@@ -1,6 +1,7 @@
 package com.qydp.utils;
 
 import com.qydp.dto.UserDTO;
+import com.qydp.entity.User;
 
 public class UserHolder {
     private static final ThreadLocal<UserDTO> tl = new ThreadLocal<>();
