@@ -1,5 +1,6 @@
 package com.qydp.service;
 
+import com.qydp.dto.Result;
 import com.qydp.entity.Shop;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -12,5 +13,9 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2021-12-22
  */
 public interface IShopService extends IService<Shop> {
+
+    Result queryById(Long id);
+
+    Result update(Shop shop);
 
 }
