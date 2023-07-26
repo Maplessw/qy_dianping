@@ -1,8 +1,11 @@
 package com.qydp.controller;
 
 
+import cn.hutool.core.bean.BeanUtil;
 import com.qydp.dto.LoginFormDTO;
 import com.qydp.dto.Result;
+import com.qydp.dto.UserDTO;
+import com.qydp.entity.User;
 import com.qydp.entity.UserInfo;
 import com.qydp.service.IUserInfoService;
 import com.qydp.service.IUserService;
@@ -79,5 +82,17 @@ public class UserController {
         info.setUpdateTime(null);
         // 返回
         return Result.ok(info);
+    }
+
+    @GetMapping("/{id}")
+    public Result queryUserById(@PathVariable("id") Long userId){
+        // 查询详情
+        User user = userService.getById(userId);
+        if (user == null) {
+            return Result.ok();
+        }
+        UserDTO userDTO = BeanUtil.copyProperties(user, UserDTO.class);
+        // 返回
+        return Result.ok(userDTO);
     }
 }
