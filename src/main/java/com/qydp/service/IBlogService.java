@@ -1,5 +1,6 @@
 package com.qydp.service;
 
+import com.qydp.dto.Result;
 import com.qydp.entity.Blog;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -13,4 +14,11 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IBlogService extends IService<Blog> {
 
+    Result queryHotBlog(Integer current);
+
+    Result queryById(Long id);
+
+    Result likeBlog(Long id);
+
+    Result queryBlogLikes(Long id);
 }
